@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Admin',  # Asegúrate de que esta línea esté correcta
+    'Inventory',
+    'Point_of_Sale',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +82,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+
+AUTH_USER_MODEL = 'Admin.User'  # Asegúrate de que esto esté correcto
 
 
 # Password validation
