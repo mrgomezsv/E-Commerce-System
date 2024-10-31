@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <title>{% block title %}Dashboard{% endblock %}</title>
     <style>
+        /* Estilos en línea (puedes mover esto a un archivo CSS separado) */
         body {
             background-color: #F4F1FF;
             font-family: Arial, sans-serif;
@@ -70,13 +71,15 @@
 
 <!-- Sidebar -->
 <nav class="sidebar">
-<!--    <ul>-->
-<!--        {% if user.is_authenticated %}-->
-<!--            <li><strong>Sistema de Gestión</strong></li>-->
-<!--            <li><a href="{% url '' %}">Estaciones de Servicio</a></li>-->
-<!--            <li><a href="{% url '' %}">Tareas</a></li>-->
-<!--        {% endif %}-->
-<!--    </ul>-->
+    <ul>
+        {% if user.is_authenticated %}
+            <li><strong>Sistema de Gestión</strong></li>
+            <li><a href="{% url 'estaciones_servicio' %}">Estaciones de Servicio</a></li>
+            <li><a href="{% url 'tareas' %}">Tareas</a></li>
+        {% else %}
+            <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+        {% endif %}
+    </ul>
 </nav>
 
 <!-- Main Content -->
